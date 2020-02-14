@@ -47,7 +47,7 @@ Use below command to run myRetail application
 ```java -jar target/product-0.0.1-SNAPSHOT.jar```
 
 ## Docker Compose:
-If docker image is already built as mentioned above use below command run both mongo and myretail product app together
+If docker image is already built as mentioned above use below command to run both mongo and myretail product app docker containers together 
 
 ```docker-compose up```
 
