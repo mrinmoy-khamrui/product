@@ -1,11 +1,15 @@
 package com.myretail.product.config;
 
+import java.time.Duration;
 import java.util.Arrays;
 
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.concurrent.ConcurrentMapCache;
 import org.springframework.cache.support.SimpleCacheManager;
+import org.springframework.cloud.circuitbreaker.resilience4j.Resilience4JCircuitBreakerFactory;
+import org.springframework.cloud.circuitbreaker.resilience4j.Resilience4JConfigBuilder;
+import org.springframework.cloud.client.circuitbreaker.Customizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -15,6 +19,8 @@ import org.springframework.web.client.RestTemplate;
 
 import com.google.common.base.Predicates;
 
+import io.github.resilience4j.circuitbreaker.CircuitBreakerConfig;
+import io.github.resilience4j.timelimiter.TimeLimiterConfig;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
@@ -47,6 +53,14 @@ public class MyRetailConfiguration {
                 new ConcurrentMapCache("product")));
         return cacheManager;
     }
+	
+	@Bean
+	public Customizer<Resilience4JCircuitBreakerFactory> defaultCustomizer() {
+	    return factory -> factory.configureDefault(id -> new Resilience4JConfigBuilder(id)
+	            .timeLimiterConfig(TimeLimiterConfig.custom().timeoutDuration(Duration.ofSeconds(4)).build())
+	            .circuitBreakerConfig(CircuitBreakerConfig.ofDefaults())
+	            .build());
+	}
 	
 	@Bean
     public Docket api() { 

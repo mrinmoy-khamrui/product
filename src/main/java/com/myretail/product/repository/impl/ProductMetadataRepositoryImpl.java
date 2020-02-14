@@ -25,7 +25,8 @@ public class ProductMetadataRepositoryImpl implements ProductMetadataRepository 
 	private RestTemplate redskyRestTemplate;
 	private String redskyUriTemplate;
 
-	public ProductMetadataRepositoryImpl(RestTemplate redskyRestTemplate, @Value("${redsky.uri.template}") String redskyUriTemplate) {
+	public ProductMetadataRepositoryImpl(RestTemplate redskyRestTemplate, 
+			@Value("${redsky.uri.template}") String redskyUriTemplate) {
 		this.redskyRestTemplate = Objects.requireNonNull(redskyRestTemplate);
 		this.redskyUriTemplate = Objects.requireNonNull(redskyUriTemplate);
 	}
