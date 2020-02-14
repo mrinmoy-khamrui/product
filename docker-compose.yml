@@ -1,0 +1,15 @@
+version: '2'
+services:
+  myretail-product-app:
+    image: myretail-product
+    environment:
+      - spring_data_mongodb_host=mongodb
+    depends_on:
+      - mongodb
+    ports:
+      - 8080:8080
+  mongodb:
+    image: mongo
+    restart: always
+    ports:
+      - 27017:27017 
