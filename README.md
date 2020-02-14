@@ -58,3 +58,7 @@ To test API using Swagger UI access below url when application is successfully s
 
 For testing offline, there is a mock product metadata API which can be used if redsky endpoint is not reachable by changing 
 the corresponding entry in application.properties
+
+# Health Checking
+Health checking actuator endpoint available at
+```http://localhost:8080/actuator/health```
