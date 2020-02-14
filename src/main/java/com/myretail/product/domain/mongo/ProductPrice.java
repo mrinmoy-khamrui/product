@@ -16,6 +16,16 @@ public class ProductPrice {
 	private int productId;
 	private BigDecimal value;
 	private Currency currency;
+	
+	public ProductPrice() {
+		
+	}
+	
+	public ProductPrice(int productId, String value, String currencyCode) {
+		this.productId = productId;
+		this.value = new BigDecimal(value);
+		this.currency = Currency.getInstance(currencyCode);
+	}
 
 	public int getProductId() {
 		return productId;

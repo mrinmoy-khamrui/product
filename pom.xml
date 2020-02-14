@@ -50,12 +50,12 @@
 				<artifactId>httpclient</artifactId>
 				<version>4.5.11</version>
 			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-circuitbreaker-resilience4j</artifactId>
+				<version>1.0.0.RELEASE</version>
+			</dependency>
 		</dependencies>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-circuitbreaker-resilience4j</artifactId>
-			<version>1.0.0.RELEASE</version>
-		</dependency>
 	</dependencyManagement>
 	<dependencies>
 		<dependency>
@@ -75,7 +75,7 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-circuitbreaker-resilience4j</artifactId>
-		</dependency>	
+		</dependency>
 		<dependency>
 			<groupId>com.jayway.jsonpath</groupId>
 			<artifactId>json-path</artifactId>

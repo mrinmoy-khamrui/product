@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  *
  */
 @RestController
-public class DummyProductMetadataController {
+public class MockProductMetadataController {
 
 	@GetMapping(value = "/v2/pdp/tcin/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> get(@PathVariable String id) {

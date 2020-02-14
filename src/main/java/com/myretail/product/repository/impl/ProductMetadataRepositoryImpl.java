@@ -42,5 +42,4 @@ public class ProductMetadataRepositoryImpl implements ProductMetadataRepository 
 			throw new ProductNotFoundException();
 		}
 	}
-
 }

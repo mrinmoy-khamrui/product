@@ -12,6 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.test.annotation.DirtiesContext;
 
 import com.myretail.product.domain.Money;
 import com.myretail.product.domain.mongo.ProductPrice;
@@ -20,6 +21,7 @@ import com.myretail.product.service.dto.PriceDTO;
 import com.myretail.product.service.dto.ProductDTO;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
+@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 public class ProductControllerIT {
 	
 	private static final int PRODUCT_ID = 13860428;
