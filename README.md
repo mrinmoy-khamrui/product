@@ -20,7 +20,7 @@ Build an application that performs the following actions:
 •	BONUS: Accepts an HTTP PUT request at the same path (/products/{id}), containing a JSON request body similar to the GET response, and updates the product’s price in the data store.  
 
 # Build:
-Make sure JAVA_HOME points to JDK 11 before running maven build. This application can built as a spring boot fat JAR or a docker 
+Make sure JAVA_HOME points to JDK 11 before running maven build. This application can be built as a spring boot fat JAR or a docker 
 image using jib-maven-plugin which creates efficient layered docker image for spring boot apps.
 
 ## To build spring boot fat JAR. It will also run all the tests:
