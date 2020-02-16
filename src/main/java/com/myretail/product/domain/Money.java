@@ -10,7 +10,7 @@ import java.util.Currency;
  * @author mrinmoy
  *
  */
-public class Money {
+public final class Money {
 
 	public static final Currency DEFAULT_CURRENCY = Currency.getInstance("USD");
 	public static final RoundingMode DEFAULT_ROUNDING = RoundingMode.HALF_EVEN;
